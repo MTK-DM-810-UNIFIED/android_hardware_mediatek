@@ -26,11 +26,11 @@ public class PowerOffAlarm {
         mContext = context;
         mPreBootMillisec = mContext.getResources().getInteger(R.integer.config_preBootMillis);
         final String driverConfig = mContext.getString(R.string.config_powerOffAlarmDrivers);
-        Log.d(TAG, "trying driver config " + driverConfig);
+        Log.w(TAG, "trying driver config " + driverConfig);
         final String[] drivers = driverConfig != null ? driverConfig.split(",") : new String[0];
         Driver driver = null;
         for (String driverName : drivers) {
-            Log.d(TAG, "trying driver " + driverName);
+            Log.w(TAG, "trying driver " + driverName);
             switch (driverName) {
                 case "alarm":
                     driver = new AlarmDriver();
@@ -54,10 +54,10 @@ public class PowerOffAlarm {
                 }
             }
             if (isSupported) {
-                Log.d(TAG, "selected driver " + driverName);
+                Log.e(TAG, "selected driver " + driverName);
                 break;
             }
-            Log.d(TAG, "driver " + driverName + " is not supported");
+            Log.e(TAG, "driver " + driverName + " is not supported");
             driver = null;
         }
         mDriver = driver;
@@ -95,7 +95,7 @@ public class PowerOffAlarm {
             long rtcTime = -1;
             try {
                 rtcTime = mDriver.getRtcTimeOptional();
-                if (DEBUG) Log.v(TAG, "read rtcTime "  + rtcTime + " current " + currentTime);
+                if (DEBUG) Log.w(TAG, "read rtcTime "  + rtcTime + " current " + currentTime);
             } catch (Exception e) {
                 Log.e(TAG, Log.getStackTraceString(e));
             }
