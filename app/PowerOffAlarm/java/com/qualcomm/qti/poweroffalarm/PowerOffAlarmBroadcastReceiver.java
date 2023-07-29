@@ -33,10 +33,10 @@ public class PowerOffAlarmBroadcastReceiver extends BroadcastReceiver {
                     + "alarmTime=" + alarmTime);
             return;
         }
-        Log.d(TAG, "Receive " + (isSetAlarm ? "set" : "cancel") + " intent.");
+        Log.w(TAG, "Receive " + (isSetAlarm ? "set" : "cancel") + " intent.");
         final PowerOffAlarm powerOffAlarm = new PowerOffAlarm(context);
         final long alarmInPref = powerOffAlarm.getAlarmFromPreference();
-        Log.d(TAG, "alarmTime=" + alarmTime + " alarmInPref=" + alarmInPref);
+        Log.w(TAG, "alarmTime=" + alarmTime + " alarmInPref=" + alarmInPref);
         if (isSetAlarm) {
             powerOffAlarm.saveAlarmToPreference(alarmTime);
             powerOffAlarm.setAlarmToRtc(alarmTime);
