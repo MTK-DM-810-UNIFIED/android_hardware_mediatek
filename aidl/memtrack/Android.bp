@@ -5,7 +5,7 @@ cc_binary {
     vintf_fragments: ["memtrack_default.xml"],
     vendor: true,
     shared_libs: [
-        "android.hardware.memtrack-V1-ndk",
+        "android.hardware.memtrack-V1-ndk_platform",
         "libbase",
         "libbinder_ndk",
         "liblog",
