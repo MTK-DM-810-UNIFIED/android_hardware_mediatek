@@ -11,7 +11,7 @@ LOCAL_SRC_FILES := Power.cpp
 LOCAL_SHARED_LIBRARIES := \
     libbase \
     libbinder_ndk \
-    android.hardware.power-V2-ndk
+    android.hardware.power-V2-ndk_platform
 
 ifneq ($(TARGET_TAP_TO_WAKE_NODE),)
     LOCAL_CFLAGS += -DTAP_TO_WAKE_NODE=\"$(TARGET_TAP_TO_WAKE_NODE)\"
