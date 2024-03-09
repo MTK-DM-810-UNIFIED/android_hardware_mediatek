@@ -18,8 +18,8 @@ cc_binary {
         "libbase",
         "liblog",
         "libutils",
-        "android.frameworks.stats-V1-ndk",
-        "android.hardware.usb.gadget-V1-ndk",
+        "android.frameworks.stats-V1-ndk_platform",
+        "android.hardware.usb.gadget-V1-ndk_platform",
         "libcutils",
         "libbinder_ndk",
     ],
@@ -28,6 +28,6 @@ cc_binary {
     ],
     proprietary: true,
     export_shared_lib_headers: [
-        "android.frameworks.stats-V1-ndk",
+        "android.frameworks.stats-V1-ndk_platform",
     ],
 }
