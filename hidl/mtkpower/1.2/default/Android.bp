@@ -15,7 +15,7 @@ cc_binary {
         "libhidlbase",
         "libutils",
         "libbinder_ndk",
-        "android.hardware.power-V2-ndk",
+        "android.hardware.power-V2-ndk_platform",
         "vendor.mediatek.hardware.mtkpower@1.0",
         "vendor.mediatek.hardware.mtkpower@1.1",
         "vendor.mediatek.hardware.mtkpower@1.2",
